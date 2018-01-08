@@ -25,13 +25,13 @@ while [ "$1" != "" ]; do
     case $1 in
         -d | --descriptions ) # gross formatting
         printf "\n ${bold}update-clean${reg} first asks for perms\n  Then runs apt-get upgrade, update, autoremove, and autoclean
-            \n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep (loses internet connectivity)\n  ${bold}--steam-kill${reg} kills steam-wine
+            \n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity\n  ${bold}--steam-kill${reg} kills steam-wine
             \n ${bold}eclipse${reg} launches Eclipse Oxygen (asks for perms)
             \n ${bold}JIPS${reg} launches JIPS
             \n ${bold}whatsapp${reg} launches WhatsApp Messenger
             \n ${bold}messengers${reg} launches all Messengers:\n  Whatsapp, Telegram, Signal
             \n ${bold}google-news${reg} launches Google News as a standalone Electron App
-            \n ${bold}google-keep${reg} launched Google Keep as a standalone Electron App"
+            \n ${bold}google-keep${reg} launches Google Keep as a standalone Electron App"
             # google-news actually called news-google in /opt/
             # google news, keep created with nativefier
         printf "\n  Created with Nativefier
