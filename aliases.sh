@@ -4,16 +4,21 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: update-clean, steam-wine, eclipse, JIPS, whatsapp, messengers, google-news, google-keep, google-music, flash, p, gs, gc, gcc, ga, gp, gpp, clustertruck"
+    echo " ${bold}Aliases${reg}: update-clean, steam-wine, eclipse, JIPS, whatsapp, messengers, google-news, google-music, flash, p, gs, gc, gcc, ga, gp, gpp, clustertruck"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
 
-case $2 in
-    "&" )
-    $hidden = $2
-    exit;;
-esac
+## COME BACK TO THIS ##
+# case $2 in
+#     "&" )
+#         $hidden = $2
+#         exit;;
+
+#     * )
+#         unset $hidden
+#         exit;;
+# esac
 
 while [ "$1" != "" ]; do
 
@@ -25,10 +30,9 @@ while [ "$1" != "" ]; do
             \n ${bold}JIPS${reg} launches JIPS
             \n ${bold}whatsapp${reg} launches WhatsApp Messenger
             \n ${bold}messengers${reg} launches all Messengers:\n  Whatsapp, Telegram, Signal
-            \n ${bold}google-news${reg} launches Google News as a standalone Electron App
-            \n ${bold}google-keep${reg} launched Google Keep as a standalone Electron App"
+            \n ${bold}google-news${reg} launches Google News as a standalone Electron App"
             # google-news actually called news-google in /opt/
-            # google news, keep created with nativefier
+            # google news created with nativefier
         printf "\n  Created with Nativefier
             \n ${bold}google-music${reg} launches Google Play Music Desktop Player\n  Same as 'google-play-music-desktop-player'
             \n ${bold}flash${reg} launches Adoble Standalone Flashplayer\n  Located in ~/Documents
@@ -72,9 +76,6 @@ while [ "$1" != "" ]; do
         --google-news | -gn )
             /opt/news-google/./news-google
             exit;;
-        --google-keep | -gk )
-            /opt/google-keep/./google-keep
-            exit;;
         --google-music | -gm )
             google-play-music-desktop-player
             exit;;
@@ -111,7 +112,7 @@ while [ "$1" != "" ]; do
             exit;;
         
         --clustertruck | -c )
-            media/ben/ExtraDrive1/Programs/Clustertruck/./start.sh "$2"
+            media/ben/ExtraDrive1/Programs/Clustertruck/./start.sh
             exit;;
 
         * )
