@@ -20,6 +20,10 @@ defaulttext() {
 #         exit;;
 # esac
 
+## CONFLICT:
+## -g... is used for google and git
+## fix this later (remove git?)
+
 while [ "$1" != "" ]; do
 
     case $1 in
@@ -73,7 +77,9 @@ while [ "$1" != "" ]; do
         --messengers | -m )
             signal-desktop & telegram-desktop & /opt/whatsapp/./WhatsApp
             exit;;
-        
+        --google | -g )
+            /opt/news-google/./news-google & /opt/google-keep/./Keep & google-play-music-desktop-player
+            exit;;
         --google-news | -gn )
             /opt/news-google/./news-google
             exit;;
