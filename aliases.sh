@@ -4,7 +4,7 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: update-clean, steam-wine, eclipse, JIPS, whatsapp, messengers, google-news, google-keep, google-music, flash, p, gs, gc, gcc, ga, gp, gpp, clustertruck"
+    echo " ${bold}Aliases${reg}: steam-wine, IntelliJ, JIPS, whatsapp, messengers, google-news, google-keep, google-music, flash, p, clustertruck"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
@@ -20,17 +20,12 @@ defaulttext() {
 #         exit;;
 # esac
 
-## CONFLICT:
-## -g... is used for google and git
-## fix this later (remove git?)
-
 while [ "$1" != "" ]; do
 
     case $1 in
         -d | --descriptions ) # gross formatting
-        printf "\n ${bold}update-clean${reg} first asks for perms\n  Then runs apt-get upgrade, update, autoremove, and autoclean
-            \n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity\n  ${bold}--steam-kill${reg} kills steam-wine
-            \n ${bold}eclipse${reg} launches Eclipse Oxygen (asks for perms)
+        printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity\n  ${bold}--steam-kill${reg} kills steam-wine
+            \n ${bold}IntelliJ${reg} launches IntelliJ
             \n ${bold}JIPS${reg} launches JIPS
             \n ${bold}whatsapp${reg} launches WhatsApp Messenger
             \n ${bold}messengers${reg} launches all Messengers:\n  Whatsapp, Telegram, Signal
@@ -47,14 +42,6 @@ while [ "$1" != "" ]; do
             \n"
         exit;;
 
-        --update-clean | -uc )
-            for action in update upgrade autoclean autoremove; do
-                sudo
-                printf "${bold}$action${reg}"; sleep 2s
-                sudo apt-get $action
-            done
-            exit;;
-
         --steam-wine | -sw )
             wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1
             exit;;
@@ -62,8 +49,8 @@ while [ "$1" != "" ]; do
             wineserver -k
             exit;;
 
-        --eclipse | -e )
-            sudo /opt/eclipse/./eclipse
+        --IntelliJ | -I )
+            /opt/IntelliJ/bin/./idea.sh
             exit;;
 
         --JIPS | -J )
@@ -100,25 +87,6 @@ while [ "$1" != "" ]; do
             else
                 python3
             fi
-            exit;;
-
-        -ga )
-            git add "$2"
-            exit;;
-        -gs )
-            git status
-            exit;;
-        -gc )
-            git clone "$2"
-            exit;;
-        -gcc )
-            git commit -m "$2"
-            exit;;
-        -gp )
-            git pull "$2"
-            exit;;
-        -gpp )
-            git push
             exit;;
         
         --clustertruck | -c )
