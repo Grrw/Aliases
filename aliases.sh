@@ -35,9 +35,8 @@ while [ "$1" != "" ]; do
             # google news, keep created with nativefier
         printf "\n  Created with Nativefier
             \n ${bold}google-music${reg} launches Google Play Music Desktop Player\n  Same as 'google-play-music-desktop-player'
-            \n ${bold}flash${reg} launches Adoble Standalone Flashplayer\n  Located in ~/Documents
+            \n ${bold}flash${reg} launches Adobe Standalone Flashplayer\n  Located in ~/Documents
             \n ${bold}p${reg}: Shortcut for 'python3'
-            \n ${bold}gs${reg}: 'git status'    | ${bold}gc${reg}: 'git clone'\n ${bold}ga${reg}: 'git add'       | ${bold}gp${reg}: 'git pull'\n ${bold}gcc${reg} 'git commit -m' | ${bold}gpp${reg} 'git push'
             \n ${bold}clustertruck${reg} launches Clustertruck (needs external mouse)
             \n"
         exit;;
