@@ -4,7 +4,7 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: steam-wine, IntelliJ, JIPS, whatsapp, messengers, google-news, google-keep, google-music, flash, p, clustertruck"
+    echo " ${bold}Aliases${reg}: steam-wine, IntelliJ, JIPS, whatsapp, messengers, google-news, google-keep, google-music, flash, p, clustertruck, amazon"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
@@ -27,8 +27,6 @@ while [ "$1" != "" ]; do
         printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity\n  ${bold}--steam-kill${reg} kills steam-wine
             \n ${bold}IntelliJ${reg} launches IntelliJ
             \n ${bold}JIPS${reg} launches JIPS
-            \n ${bold}whatsapp${reg} launches WhatsApp Messenger
-            \n ${bold}messengers${reg} launches all Messengers:\n  Whatsapp, Telegram, Signal
             \n ${bold}google-news${reg} launches Google News as a standalone Electron App
             \n ${bold}google-keep${reg} launches Google Keep as a standalone Electron App"
             # google-news actually called news-google in /opt/
@@ -38,7 +36,7 @@ while [ "$1" != "" ]; do
             \n ${bold}flash${reg} launches Adobe Standalone Flashplayer\n  Located in ~/Documents
             \n ${bold}p${reg}: Shortcut for 'python3'
             \n ${bold}clustertruck${reg} launches Clustertruck (needs external mouse)
-            \n"
+            \n${bold}amazon${red} removes amazon (if it exists)"
         exit;;
 
         --steam-wine | -sw )
@@ -56,13 +54,6 @@ while [ "$1" != "" ]; do
             java -jar /opt/JIPS/JIPS.jar
             exit;;
 
-        --whatsapp | -w )
-            /opt/whatsapp/./WhatsApp
-            exit;;
-
-        --messengers | -m )
-            signal-desktop & telegram-desktop & /opt/whatsapp/./WhatsApp
-            exit;;
         --google | -g )
             /opt/news-google/./news-google & /opt/google-keep/./Keep & google-play-music-desktop-player
             exit;;
@@ -90,6 +81,10 @@ while [ "$1" != "" ]; do
         
         --clustertruck | -c )
             media/ben/ExtraDrive1/Programs/Clustertruck/./start.sh
+            exit;;
+
+        --amazon | -a )
+            sudo rm /usr/share/applications/ubuntu-amazon-default.desktop
             exit;;
 
         * )
