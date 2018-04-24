@@ -36,7 +36,7 @@ while [ "$1" != "" ]; do
             \n ${bold}flash${reg} launches Adobe Standalone Flashplayer\n  Located in ~/Documents
             \n ${bold}p${reg}: Shortcut for 'python3'
             \n ${bold}clustertruck${reg} launches Clustertruck (needs external mouse)
-            \n${bold}amazon${red} removes amazon (if it exists)"
+            \n${bold}amazon${red} removes amazon (if it exists)" # why
         exit;;
 
         --steam-wine | -sw )
