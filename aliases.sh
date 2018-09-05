@@ -4,7 +4,7 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: steam-wine, IntelliJ, JIPS, whatsapp, messengers, google-news, google-keep, google-music, flash, p, clustertruck, amazon"
+    echo " ${bold}Aliases${reg}: steam-wine, IntelliJ, mvp, JIPS, messengers, google-news, google-keep, google-music, flash, python, amazon"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
@@ -26,6 +26,7 @@ while [ "$1" != "" ]; do
         -d | --descriptions ) # gross formatting
         printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity\n  ${bold}--steam-kill${reg} kills steam-wine
             \n ${bold}IntelliJ${reg} launches IntelliJ
+            \n ${bold}mvp${reg} launches mpv
             \n ${bold}JIPS${reg} launches JIPS
             \n ${bold}google-news${reg} launches Google News as a standalone Electron App
             \n ${bold}google-keep${reg} launches Google Keep as a standalone Electron App"
@@ -55,10 +56,7 @@ while [ "$1" != "" ]; do
             exit;;
 
         --google | -g )
-            /opt/news-google/./news-google & /opt/google-keep/./Keep & google-play-music-desktop-player
-            exit;;
-        --google-news | -gn )
-            /opt/news-google/./news-google
+            /opt/google-keep/./Keep & google-play-music-desktop-player
             exit;;
         --google-keep | -gk )
             /opt/google-keep/./Keep
@@ -77,10 +75,6 @@ while [ "$1" != "" ]; do
             else
                 python3
             fi
-            exit;;
-        
-        --clustertruck | -c )
-            media/ben/ExtraDrive1/Programs/Clustertruck/./start.sh
             exit;;
 
         --amazon | -a )
