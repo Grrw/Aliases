@@ -44,12 +44,6 @@ while [ "$1" != "" ]; do
             printf "Just type 'mpv' you moron"
             exit;;
 
-        --google | -g )
-            /opt/google-keep/./Keep & google-play-music-desktop-player
-            exit;;
-        --google-keep | -gk )
-            /opt/google-keep/./Keep
-            exit;;
         --google-music | -gm )
             google-play-music-desktop-player
             exit;;
