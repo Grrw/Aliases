@@ -4,21 +4,11 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, IntelliJ, mvp, JIPS, messengers, google-news, google-keep, google-music, flash, python, amazon"
+    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, IntelliJ, mvp, JIPS, google-music, flash, python, amazon"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
 
-## COME BACK TO THIS ##
-# case $2 in
-#     "&" )
-#         $hidden = $2
-#         exit;;
-
-#     * )
-#         unset $hidden
-#         exit;;
-# esac
 
 while [ "$1" != "" ]; do
 
@@ -27,18 +17,14 @@ while [ "$1" != "" ]; do
         printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity
             \n ${bold}dolphin-emu${reg} launches dolphin emulator for Windows through wine.
             \n ${bold}IntelliJ${reg} launches IntelliJ
-            \n ${bold}mvp${reg} launches mpv
+            \n ${bold}mpv${reg} \"launches\" mpv
             \n ${bold}JIPS${reg} launches JIPS
-            \n ${bold}google-news${reg} launches Google News as a standalone Electron App
-            \n ${bold}google-keep${reg} launches Google Keep as a standalone Electron App"
-            # google-news actually called news-google in /opt/
-            # google news, keep created with nativefier
-        printf "\n  Created with Nativefier
             \n ${bold}google-music${reg} launches Google Play Music Desktop Player\n  Same as 'google-play-music-desktop-player'
             \n ${bold}flash${reg} launches Adobe Standalone Flashplayer\n  Located in ~/Documents
             \n ${bold}p${reg}: Shortcut for 'python3'
             \n ${bold}clustertruck${reg} launches Clustertruck (needs external mouse)
-            \n${bold}amazon${red} removes amazon (if it exists)" # why
+            \n${bold}amazon${reg} removes amazon (if it exists)"
+            # where does amaxon come from and why do I need to remove it?
         exit;;
 
         --steam-wine | -sw )
@@ -53,6 +39,10 @@ while [ "$1" != "" ]; do
 
         --IntelliJ | -I )
             /opt/IntelliJ/bin/./idea.sh
+            exit;;
+
+        --mpv )
+            printf "Just type 'mpv' you moron"
             exit;;
 
         --JIPS | -J )
@@ -73,8 +63,17 @@ while [ "$1" != "" ]; do
             ~/Documents/flashplayer
             exit;;
 
-        -p )
+        -p | --python )
+            if [ "$1" == "--python" ]; then
+                printf " Why did you go through all that hassle?\n Next time use -p.\n\n"
+            fi
+            # this if statement currently works if any number of flags up to 3 are given
+            # $ a -p main.py <options> || $ a -p main.py || $ a -p
+            # ignore the error messages
             if [ $2 != "" ] || [ $2 != " " ]; then
+                if [ $3 != ""] || [ $2 != " " ]; then
+                    python3 "$2" "$3"
+                fi
                 python3 "$2"
             else
                 python3
