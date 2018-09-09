@@ -4,7 +4,7 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: steam-wine, IntelliJ, mvp, JIPS, messengers, google-news, google-keep, google-music, flash, python, amazon"
+    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, IntelliJ, mvp, JIPS, messengers, google-news, google-keep, google-music, flash, python, amazon"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
@@ -24,7 +24,8 @@ while [ "$1" != "" ]; do
 
     case $1 in
         -d | --descriptions ) # gross formatting
-        printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity\n  ${bold}--steam-kill${reg} kills steam-wine
+        printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity
+            \n ${bold}dolphin-emu${reg} launches dolphin emulator for Windows through wine.
             \n ${bold}IntelliJ${reg} launches IntelliJ
             \n ${bold}mvp${reg} launches mpv
             \n ${bold}JIPS${reg} launches JIPS
@@ -43,8 +44,11 @@ while [ "$1" != "" ]; do
         --steam-wine | -sw )
             wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1
             exit;;
-        --steam-kill | -sk )
-            wineserver -k
+
+        # wineserver -k
+
+        --dolphin-emu | -D )
+            wine ~/.wine/drive_c/Program\ Files/Dolphin/Dolphin.exe
             exit;;
 
         --IntelliJ | -I )
