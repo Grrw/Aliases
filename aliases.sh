@@ -4,7 +4,7 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, IntelliJ, mvp, JIPS, google-music, flash, python, amazon"
+    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, IntelliJ, mvp, google-music, flash, python, amazon"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
@@ -18,7 +18,6 @@ while [ "$1" != "" ]; do
             \n ${bold}dolphin-emu${reg} launches dolphin emulator for Windows through wine.
             \n ${bold}IntelliJ${reg} launches IntelliJ
             \n ${bold}mpv${reg} \"launches\" mpv
-            \n ${bold}JIPS${reg} launches JIPS
             \n ${bold}google-music${reg} launches Google Play Music Desktop Player\n  Same as 'google-play-music-desktop-player'
             \n ${bold}flash${reg} launches Adobe Standalone Flashplayer\n  Located in ~/Documents
             \n ${bold}p${reg}: Shortcut for 'python3'
@@ -43,10 +42,6 @@ while [ "$1" != "" ]; do
 
         --mpv )
             printf "Just type 'mpv' you moron"
-            exit;;
-
-        --JIPS | -J )
-            java -jar /opt/JIPS/JIPS.jar
             exit;;
 
         --google | -g )
