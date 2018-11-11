@@ -4,7 +4,7 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, IntelliJ, mvp, google-music, flash, python, amazon"
+    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, microphone-listen, IntelliJ, mvp, google-music, flash, python, amazon"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
@@ -27,14 +27,26 @@ while [ "$1" != "" ]; do
         exit;;
 
         --steam-wine | -sw )
-            wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe >/dev/null 2>&1
+            wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox
             exit;;
 
         # wineserver -k
 
         --dolphin-emu | -D )
-            wine ~/.wine/drive_c/Program\ Files/Dolphin/Dolphin.exe
+            wine /media/ben/ExtraDrive1/Programs/Dolphin/Dolphin.exe
             exit;;
+
+        --microphone-listen | -m )
+            printf "This will listen to all audio from the microphone. \n-y to turn on; -n to turn off.\n"
+            if [ "$2" == "-y" ]; then
+                pactl load-module module-loopback
+            elif [ "$2" == "-n" ]; then
+                pactl unload-module module-loopback
+            else
+                printf "You did not supply a second argument.\n"
+            fi
+            exit;;
+            
 
         --IntelliJ | -I )
             /opt/IntelliJ/bin/./idea.sh
