@@ -17,7 +17,6 @@ while [ "$1" != "" ]; do
         printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity
             \n ${bold}dolphin-emu${reg} launches dolphin emulator for Windows through wine.
             \n ${bold}IntelliJ${reg} launches IntelliJ
-            \n ${bold}mpv${reg} \"launches\" mpv
             \n ${bold}google-music${reg} launches Google Play Music Desktop Player\n  Same as 'google-play-music-desktop-player'
             \n ${bold}flash${reg} launches Adobe Standalone Flashplayer\n  Located in ~/Documents
             \n ${bold}p${reg}: Shortcut for 'python3'
@@ -27,13 +26,13 @@ while [ "$1" != "" ]; do
         exit;;
 
         --steam-wine | -sw )
-            wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox
+            wine64 ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe "-nofriendsgui" -no-cef-sandboxexi
             exit;;
 
         # wineserver -k
 
         --dolphin-emu | -D )
-            wine /media/ben/ExtraDrive1/Programs/Dolphin/Dolphin.exe
+            wine64 /media/ben/ExtraDrive1/Programs/Dolphin/Dolphin.exe
             exit;;
 
         --microphone-listen | -m )
@@ -50,10 +49,6 @@ while [ "$1" != "" ]; do
 
         --IntelliJ | -I )
             /opt/IntelliJ/bin/./idea.sh
-            exit;;
-
-        --mpv )
-            printf "Just type 'mpv' you moron"
             exit;;
 
         --google-music | -gm )
