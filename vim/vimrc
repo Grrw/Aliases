@@ -1,0 +1,23 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" plugins and settings
+so ~/.vim/plugins.vim
+
+" hotkeys
+so ~/.vim/hotkeys.vim
+
+set shiftwidth=4             " '>' indent uses 4 spaces width
+" set autoindent               " turned off, annoying with spaces...
+set expandtab                " <Tab> inserts 4 spaces
+set tabstop=4                " show existing tab with 4 spaces width
+colorscheme desert
+set nu
+set autochdir
+syntax on
+set showmode
+set hlsearch
+set laststatus=2			  " required for lightline
+set noshowmode				  " replaced by lightline
+
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
