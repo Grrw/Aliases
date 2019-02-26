@@ -1,0 +1,8 @@
+NOTES ON VARIOUS FILES IN THIS FOLDER:
+
+1. polybarConfig.ini should be symlinked as ~/.config/polybar/ named "config"
+2. Any shell scripts should be symlinked into ~/.config/polybar/scripts/
+
+
+
+
