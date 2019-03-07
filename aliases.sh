@@ -23,7 +23,7 @@ case $1 in
         exit;;
 
         --steam-wine | -sw )
-            wine64 ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe "-nofriendsgui" -no-cef-sandboxexi
+            wine64 ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe "-nofriendsgui" -no-cef-sandbox
             exit;;
 
         # wineserver -k
