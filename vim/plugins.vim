@@ -22,11 +22,6 @@ Plugin 'TaDaa/vimade'
 call vundle#end()
 filetype plugin indent on
 
-" Hotkeys
-map <C-o> :NERDTreeToggle<CR>
-map <C-l> :vsplit<CR>
-map <C-k> :split<CR>
-
 " lightline Settings
 let g:lightline = {
   \     'active': {

@@ -11,7 +11,7 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
-inoremap < <><left>
+" inoremap < <><left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
@@ -19,7 +19,7 @@ inoremap {;<CR> {<CR>};<ESC>O
 inoremap ) <del>)
 inoremap ] <del>]
 inoremap } <del>}<CR>
-inoremap > <del>>
+" inoremap > <del>>
 inoremap }<CR> <del><del>}<CR>
 inoremap };<CR> <del><del><del>};<esc>o
 
