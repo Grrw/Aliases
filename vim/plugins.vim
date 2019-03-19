@@ -18,6 +18,10 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 " Fade Inactive Windows
 Plugin 'TaDaa/vimade'
+" Automatic Closers
+Plugin 'Townk/vim-autoclose'
+
+
 
 call vundle#end()
 filetype plugin indent on
