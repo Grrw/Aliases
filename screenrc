@@ -1,0 +1,21 @@
+
+bind j focus down
+bind k focus up
+bind l focus right
+bind h focus left
+
+
+# makes a new status and highlights current window
+hardstatus alwayslastline '%m/%d %02c:%s %?%E%{= .Y}%:%{= .g}%?%H%{-} %L=%-w%45L>%{= g.}%n %t%{-}%+w %-17<%=%{= .y}(%l)'
+
+startup_message off
+
+defmousetrack on
+
+screen -t Code 0 ranger
+screen -t Compile 1 bash
+screen -t Notes 2 ranger
+screen -t MOCP 3 mocp
+select 0
+
+
