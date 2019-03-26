@@ -9,10 +9,6 @@ Listen from Microphone Port
 Kill Wineserver
 Suspend Computer" | rofi -dmenu -mesg "What would you like to do?" -i -p "")
 
-setExplain() { 
-    explain=$(echo -e "Back\nSteam (Wine)\nDolphin Emulator (Wine)\nListen from Microphone Port\nSuspend Computer" | rofi -dmenu -mesg "Which Option?")
-}
-
 while [ "$choice" != "Cancel" ]; do
     case $choice in
         Launch\ Steam\ \(Wine\) )
