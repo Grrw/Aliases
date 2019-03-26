@@ -4,7 +4,7 @@ bold=$(tput bold)
 reg=$(tput sgr0)
 
 defaulttext() {
-    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, microphone-listen, python, amazon"
+    echo " ${bold}Aliases${reg}: steam-wine, dolphin-emu, microphone-listen, python, amazon, suspend"
     echo " Run with --[alias name] or -[abbreviation] to launch"
     echo " Run with -d for descriptions"
 }
@@ -18,6 +18,7 @@ case $1 in
             \n ${bold}microphone-listen${reg} uses pactl to loop microphone audio through speakers
             \n ${bold}p${reg}: Shortcut for 'python3'
             \n ${bold}amazon${reg} removes the Ubuntu Amazon App (if it exists)
+            \n ${bold}suspend${reg} suspends the computer with rofi prompt
             \n"
             # amazon is some Ubuntu default app
         exit;;
@@ -72,6 +73,10 @@ case $1 in
 
         --amazon | -a )
             sudo rm /usr/share/applications/ubuntu-amazon-default.desktop
+            exit;;
+
+        --suspend | -s )
+            systemctl suspend
             exit;;
 
         * )
