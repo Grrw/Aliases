@@ -2,12 +2,24 @@
 
 # make a hotkey to this script
 
-choice=$(echo -e "Cancel
+#choice=$(echo -e \
+#"Cancel
+#Launch Steam (Wine)
+#Launch Dolphin Emulator (Wine)
+#Listen from Microphone Port
+#Kill Wineserver
+#Suspend Computer" | rofi -dmenu -mesg "What would you like to do?" -i -p "")
+
+
+choice=$(rofi -dmenu -mesg "What would you like to do?" -i -p "" <<stam
+Cancel
 Launch Steam (Wine)
 Launch Dolphin Emulator (Wine)
 Listen from Microphone Port
 Kill Wineserver
-Suspend Computer" | rofi -dmenu -mesg "What would you like to do?" -i -p "")
+Suspend Computer
+stam
+)
 
 case $choice in
     Launch\ Steam\ \(Wine\) )
@@ -20,7 +32,7 @@ case $choice in
 
     Kill\ Wineserver )
         wineserv=$(echo -e "No\nYes" | rofi -dmenu -mesg "Are you sure you want to kill the wineserver?" -i -p "")
-            [ "$wineserv" == "Yes" ] && wineserver -k
+            [ $wineserv == Yes ] && wineserver -k
     exit;;
 
     Listen\ from\ Microphone\ Port )
