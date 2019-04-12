@@ -133,10 +133,12 @@ alias cded='cd /media/ben/ExtraDrive1'
 alias cdpj='cd /media/ben/ExtraDrive1/programming/Java'
 alias gs='git status'
 alias r='ranger'
-alias s='screen -dRR'
+alias s='screen'
+alias sCon='screen -dRR'
 alias 4d3d3d3='mpv https://www.youtube.com/watch?v=XWX4GUYGQXQ'
 
-
+# stuff for thefuck
+eval $(thefuck --alias) 
 
 
 
