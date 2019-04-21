@@ -13,13 +13,7 @@ defaulttext() {
 while [ "$1" != "" ]; do
 case $1 in
         -d | --descriptions )
-        printf "\n ${bold}steam-wine${reg} runs the steam client for Windows through wine.\n  Needs restart if computer goes to sleep or loses internet connectivity
-            \n ${bold}dolphin-emu${reg} launches dolphin emulator for Windows through wine.
-            \n ${bold}microphone-listen${reg} uses pactl to loop microphone audio through speakers
-            \n ${bold}p${reg}: Shortcut for 'python3'
-            \n ${bold}amazon${reg} removes the Ubuntu Amazon App (if it exists)
-            \n ${bold}suspend${reg} suspends the computer with rofi prompt
-            \n"
+        printf "${bold}steam-wine${reg} runs the steam client for Windows through wine\n Needs restart if computer goes to sleep or loses internet connectivity\n ${bold}dolphin-emu${reg} launches dolphin emulator for Windows through wine \n ${bold}microphone-listen${reg} uses pactl to loop microphone audio through speakers \n ${bold}p${reg}: Shortcut for 'python3'\n ${bold}amazon${reg} removes the Ubuntu Amazon App (if it exists)\n ${bold}suspend${reg} suspends the computer with rofi prompt\n"
             # amazon is some Ubuntu default app
         exit;;
 
