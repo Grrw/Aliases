@@ -17,6 +17,5 @@ screen -t Code 0 ranger
 screen -t Compile 1 bash
 screen -t Notes 2 ranger
 screen -t MOCP 3 mocp
-select 1 # hurts so good
 
 
