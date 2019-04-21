@@ -85,8 +85,10 @@ class cdsm(Command):
                 self.fm.cd('~/Documents/college/18-19_1')
             elif self.arg(1) == "1.2":
                 self.fm.cd('~/Documents/college/18-19_2')
-            elif self.arg(1)=="2.1":
+            elif self.arg(1) == "2.1":
                 self.fm.cd('~/Documents/college/19-20_1')
+            elif self.arg(1) == "2.2":
+                self.fm.cd('~/Documents/college/19-20_2')
 
         else:
             self.fm.cd('~/Documents/college/18-19_2')
