@@ -1,8 +1,14 @@
-
+# vim movement
 bind j focus down
 bind k focus up
 bind l focus right
 bind h focus left
+
+# resize hotkeys
+bind o resize -h +4
+bind y resize -h -4
+bind i resize -v +4
+bind u resize -v -4
 
 shelltitle "$ |bash"
 
