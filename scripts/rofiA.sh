@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# make a hotkey to this script
-
-#choice=$(echo -e \
-#"Cancel
-#Launch Steam (Wine)
-#Launch Dolphin Emulator (Wine)
-#Listen from Microphone Port
-#Kill Wineserver
-#Suspend Computer" | rofi -dmenu -mesg "What would you like to do?" -i -p "")
-
-
 choice=$(rofi -dmenu -mesg "What would you like to do?" -i -p "" <<text
 Cancel
 Launch Steam (Wine)
@@ -47,4 +36,3 @@ case $choice in
     ;;
 
 esac
-
