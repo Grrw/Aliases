@@ -6,9 +6,29 @@ Pandoc Notes
 options
 )
 
+# appending the option at the end of a line: it will show up when you type it
+
 case $choice in
     Pandoc\ Notes )
-        panMem=$(echo -e "Insert Images:\n    ![name](path/to/file){ width=50% height=50% }\n    Appending a backslash makes it not a figure" | rofi -dmenu -i -p)
+mem=$(rofi -dmenu -i -p << pan
+Inserting Images:
+    ![name](path/to/file){ width=50% height=50% }                           Inserting Images
+    By default this captions the image as a figure                          Inserting Images
+    Appending a backslash to the end makes it a plain image                 Inserting Images
+Making a Header:
+    ---                                                                     Making a Header
+    title:                                                                  Making a Header
+    -                                                                       Making a Header
+    author:                                                                 Making a Header
+    -                                                                       Making a Header
+    theme:                                                                  Making a Header
+    -                                                                       Making a Header
+    colortheme:                                                             Making a Header
+    -                                                                       Making a Header
+    ---                                                                     Making a Header
+
+pan
+)
     ;;
 
 esac
