@@ -1,3 +1,9 @@
+
+# Change escape char to M-a
+escape ^Aa
+register S ^A
+bindkey "^[a" process S
+
 # vim movement
 bind j focus down
 bind k focus up
@@ -20,8 +26,4 @@ startup_message off
 defmousetrack on
 
 screen -t Code 0 ranger
-screen -t Compile 1 bash
-screen -t Notes 2 ranger
-screen -t MOCP 3 mocp
-
 
