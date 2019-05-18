@@ -2,8 +2,9 @@
 
 choice=$(rofi -dmenu -mesg "What would you like to do?" -i -p "" <<text
 Cancel
-Launch Steam (Wine)
-Launch Dolphin Emulator (Wine)
+Toggle Polybar
+Steam (Wine)
+Dolphin Emulator (Wine)
 Listen from Microphone Port
 Kill Wineserver
 Suspend Computer
@@ -11,11 +12,15 @@ text
 )
 
 case $choice in
-    Launch\ Steam\ \(Wine\) )
+    Toggle\ Polybar )
+        /home/ben/Documents/alias/polybar/./launch-polybar.sh
+    ;;
+
+    Steam\ \(Wine\) )
         wine64 ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe -no-cef-sandbox
     ;;
 
-    Launch\ Dolphin\ Emulator\ \(Wine\) )
+    Dolphin\ Emulator\ \(Wine\) )
         wine64 /media/ben/ExtraDrive1/Programs/Dolphin/Dolphin.exe
     ;;
 
