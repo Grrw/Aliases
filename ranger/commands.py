@@ -89,6 +89,14 @@ class cdsm(Command):
                 self.fm.cd('~/Documents/college/19-20_1')
             elif self.arg(1) == "2.2":
                 self.fm.cd('~/Documents/college/19-20_2')
+            elif self.arg(1) == "3.1":
+                self.fm.cd('~/Documents/college/20-21_1')
+            elif self.arg(1) == "3.2":
+                self.fm.cd('~/Documents/college/20-21_2')
+            elif self.arg(1) == "4.1":
+                self.fm.cd('~/Documents/college/21-22_1')
+            elif self.arg(1) == "4.2":
+                self.fm.cd('~/Documents/college/21-22_2')
 
         else:
             self.fm.cd('~/Documents/college/18-19_2')
@@ -106,7 +114,4 @@ class tr(Command):
 
         else:
             self.fm.cd('~/.local/share/Trash/files')
-
-
-
 
