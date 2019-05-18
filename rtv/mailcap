@@ -29,11 +29,9 @@
 # Note that rtv returns a list of urls for imgur albums, so we don't put quotes around the `%s`
 # rtv-images is a temporary folder which exists so long as sxiv is open
 # this ^ is so it's easily accessible for sending the image over a messaging client
-image/x-imgur-album; mkdir -p /home/ben/Downloads/rtv-images && wget -P /home/ben/Downloads/rtv-images/ -i %s && sxiv /home/ben/Downloads/rtv-images/; test=test -n "$DISPLAY"
-image/gif; mkdir -p /home/ben/Downloads/rtv-images/ && wget '%s' -O /home/ben/Downloads/rtv-images/rtv-image.gif && sxiv /home/ben/Downloads/rtv-images/rtv-image.gif && rm -rf /home/ben/Downloads/rtv-images*; test=test -n "$DISPLAY"
-image/jpeg; mkdir -p /home/ben/Downloads/rtv-images/ && wget '%s' -O /home/ben/Downloads/rtv-images/rtv-image.jpg && sxiv /home/ben/Downloads/rtv-images/rtv-image.jpg && rm -rf /home/ben/Downloads/rtv-images*; test=test -n "$DISPLAY"
-image/png; mkdir -p /home/ben/Downloads/rtv-images/ && wget '%s' -O /home/ben/Downloads/rtv-images/rtv-image.png && sxiv /home/ben/Downloads/rtv-images/rtv-image.png && rm -rf /home/ben/Downloads/rtv-images*; test=test -n "$DISPLAY"
-image/*; mkdir -p /home/ben/Downloads/rtv-images/ && wget '%s' -O /home/ben/Downloads/rtv-images/rtv-image && sxiv /home/ben/Downloads/rtv-images/rtv-image && rm -rf /home/ben/Downloads/rtv-images*; test=test -n "$DISPLAY"
+image/x-imgur-album; feh %s; test=test -n "$DISPLAY"
+image/gif; mpv '%s'; test=test -n "$DISPLAY"
+image/*; feh '%s'; test=test -n "$DISPLAY"
 
 
 # Youtube videos are assigned a custom mime-type, which can be streamed with
