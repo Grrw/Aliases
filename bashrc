@@ -127,10 +127,8 @@ PROMPT_COMMAND='echo -ne "\033k\033\0134"'
 
 ## ALIASES ##
 # put most of them here
-alias a='~/Documents/alias/./aliases.sh'
-# cd /media/ben/ExtraDrive1/
 alias cded='cd /media/ben/ExtraDrive1'
-alias cdpj='cd /media/ben/ExtraDrive1/programming/Java'
+alias cdal='cd /home/ben/Documents/alias'
 alias gs='git status'
 alias r='ranger'
 alias s='screen'
