@@ -11,7 +11,7 @@
 # ...but they must follow this syntax:
 #  /Music/Artist/Album/number | Songname.format
 
-name=$(mocp -Q %file | sed "s/.*Music\///g;s/\/[0-9]*\s|/ -/g;s/\//: /g;s/\..*//g")
+name=$(mocp -Q %file | sed "s/.*Music\///g;s/\/[0-9]*\s|\s/\n/g;s/\//: /g;s/\..*//g")
 
-notify-send "Time Elapsed: `mocp -Q %ct`/`mocp -Q %tt`" "$name"
+notify-send "$name" "Time Elapsed: `mocp -Q %ct`/`mocp -Q %tt`"
 
