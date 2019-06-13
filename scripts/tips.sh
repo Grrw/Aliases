@@ -2,14 +2,15 @@
 
 choice=$(rofi -dmenu -i -p << options
 Cancel
-Pandoc Notes
+pandoc
+xrandr
 options
 )
 
 # appending the option at the end of a line: it will show up when you type it
 
 case $choice in
-    Pandoc\ Notes )
+    pandoc)
 mem=$(rofi -dmenu -i -p << pan
 Inserting Images:
     ![name](path/to/file){ width=50% height=50% }                           Inserting Images
@@ -26,10 +27,19 @@ Making a Header:
     colortheme:                                                             Making a Header
     -                                                                       Making a Header
     ---                                                                     Making a Header
-
 pan
 )
-    ;;
+;;
+
+xrandr )
+    mem=$(rofi -dmenu -i -p << xran
+xrandr --current --verbose | grep Brightness
+xrandr --output eDP-1 --brightness 1.0
+xran
+)
+        
+;;
+
 
 esac
 
