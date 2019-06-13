@@ -103,7 +103,7 @@ class cdsm(Command):
 
 class tr(Command):
     """
-    Navigate to the trashes folder
+    Navigate to the trashes folder used by other file browsers
     alternatively can also empty
     """
 
@@ -114,4 +114,3 @@ class tr(Command):
 
         else:
             self.fm.cd('~/.local/share/Trash/files')
-
