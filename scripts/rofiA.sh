@@ -2,6 +2,7 @@
 
 choice=$(rofi -dmenu -mesg "What would you like to do?" -i -p "" <<text
 Cancel
+Night Light
 Toggle Polybar
 Steam (Wine)
 Dolphin Emulator (Wine)
@@ -12,6 +13,14 @@ text
 )
 
 case $choice in
+    Night\ Light)
+        if [ $(xrandr --current --verbose | grep Gamma | grep -o [0-9].*) == "1.0:1.0:1.0" ]; then 
+            xrandr --output eDP-1 --gamma 1.1:0.8:0.7
+        else
+            xrandr --output eDP-1 --gamma 1.0:1.0:1.0
+        fi
+    ;;
+
     Toggle\ Polybar )
         /home/ben/Documents/alias/polybar/./launch-polybar.sh
     ;;
