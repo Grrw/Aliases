@@ -14,10 +14,13 @@ text
 
 case $choice in
     Night\ Light)
-        if [ $(xrandr --current --verbose | grep Gamma | grep -o [0-9].*) == "1.0:1.0:1.0" ]; then 
-            xrandr --output eDP-1 --gamma 1.1:0.8:0.7
+        if [ "$(pgrep nightlight)" ]; then
+            killall nightlight
+            xrandr --output eDP-1 --gamma 1:1:1
+            notify-send "Nightlight Status" "Turned off"
         else
-            xrandr --output eDP-1 --gamma 1.0:1.0:1.0
+            notify-send "Nightlight Status" "Turned on"
+            /usr/local/bin/nightlight
         fi
     ;;
 
