@@ -1,0 +1,5 @@
+# COPY this file into /etc/sudoers.d/
+# make sure the copy is OWNED BY ROOT and is mode 440
+
+ben ALL=(ALL) NOPASSWD:/usr/local/bin/sysBrightness
+
