@@ -6,7 +6,12 @@ while true; do
     oldHr=$(date +"%H")
     printf "$oldHr\n"
 
-    hour=$(echo $oldHr | sed 's/^0*//')
+    # if statment fixes bug where it was "day" from 00 to 01
+    if [ $oldHr == 00 ]; then
+        hour=0
+    else
+        hour=$(echo $oldHr | sed 's/^0*//')
+    fi
 
     if (( $hour > 19 )) || (( $hour < 5 )); then
         # between 20:00 and 04:00
