@@ -131,7 +131,7 @@ alias cded='cd /media/ben/ExtraDrive1'
 alias cdal='cd /home/ben/Documents/alias'
 alias gs='git status'
 alias r='ranger'
-alias s='screen'
+alias s='screen -dRR'
 alias sCon='screen -dRR'
 alias 4d3d3d3='mpv https://www.youtube.com/watch?v=XWX4GUYGQXQ'
 
