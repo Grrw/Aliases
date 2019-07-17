@@ -25,5 +25,5 @@ startup_message off
 
 defmousetrack on
 
-screen -t Code 0 ranger
+screen -t 0 ranger
 
