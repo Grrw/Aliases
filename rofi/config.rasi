@@ -7,7 +7,7 @@ yoffset: 33;
 scrollbar-width: 0;
 font: "padmaa-Bold 10";
 width: 50;
-columns: 4;
+columns: 1;
 lines: 5;
 scroll-method: 1;
 eh: 1;
