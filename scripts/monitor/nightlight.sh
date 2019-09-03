@@ -1,6 +1,13 @@
 #!/bin/bash
 # make a symlink called nightlight in /usr/local/bin/
 
+turnoff=false
+
+case "$1" in
+    q )
+        turnoff=true
+esac
+
 while true; do
 
     oldHr=$(date +"%H")
@@ -30,6 +37,10 @@ while true; do
     fi
 
     printf "\n"
+
+    if [ "$turnoff" = true ]; then
+        break
+    fi
 
     while [ $(date +"%H") == $oldHr ]; do
         sleep 5m
