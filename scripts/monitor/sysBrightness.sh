@@ -12,7 +12,8 @@ if [ "$1" != "" ]; then
     fi
 
 else
-    ## This is here for KDE hotkey compatibility, you cannot have arguments for scripts
+    # This is here for KDE hotkey compatibility, you cannot have arguments for scripts
+    # ^ This is no longer true for some reason?
     echo "$(echo "$(cat /sys/class/backlight/intel_backlight/brightness)+150" | bc)" > /sys/class/backlight/intel_backlight/brightness
 fi
 
