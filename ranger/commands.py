@@ -99,7 +99,7 @@ class cdsm(Command):
                 self.fm.cd('~/Documents/college/21-22_2')
 
         else:
-            self.fm.cd('~/Documents/college/18-19_2')
+            self.fm.cd('~/Documents/college/19-20_1')
 
 class tr(Command):
     """
