@@ -12,21 +12,23 @@ options
 case $choice in
     pandoc)
 mem=$(rofi -dmenu -i -p << pan
-Inserting Images:
-    ![name](path/to/file){ width=50% height=50% }                           Inserting Images
-    By default this captions the image as a figure                          Inserting Images
-    Appending a backslash to the end makes it a plain image                 Inserting Images
-Making a Header:
-    ---                                                                     Making a Header
-    title:                                                                  Making a Header
-    -                                                                       Making a Header
-    author:                                                                 Making a Header
-    -                                                                       Making a Header
-    theme:                                                                  Making a Header
-    -                                                                       Making a Header
-    colortheme:                                                             Making a Header
-    -                                                                       Making a Header
-    ---                                                                     Making a Header
+Compiling:
+    pandoc filename.ext -t outputType -o output.ext                              Compiling
+Images:
+    ![name](path/to/file){ width=50% height=50% }                                Images
+    By default this captions the image as a figure                               Images
+    Appending a backslash to the end makes it a plain image                      Images
+Header:
+    ---                                                                          Header
+    title:                                                                       Header
+    -                                                                            Header
+    author:                                                                      Header
+    -                                                                            Header
+    theme:                                                                       Header
+    -                                                                            Header
+    colortheme:                                                                  Header
+    -                                                                            Header
+    ---                                                                          Header
 pan
 )
 ;;
