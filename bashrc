@@ -134,6 +134,7 @@ alias r='ranger'
 alias s='screen -dRR'
 alias sCon='screen -dRR'
 alias 4d3d3d3='mpv https://www.youtube.com/watch?v=XWX4GUYGQXQ'
+alias gd='git diff'
 
 # stuff for thefuck
 eval $(thefuck --alias) 
