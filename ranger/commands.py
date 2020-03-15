@@ -99,7 +99,17 @@ class cdsm(Command):
                 self.fm.cd('~/Documents/college/21-22_2')
 
         else:
-            self.fm.cd('~/Documents/college/19-20_1')
+            self.fm.cd('~/Documents/college')
+
+class cdd(Command):
+    """
+    :cdd
+    (cd DnD)
+    Jump to D&D folder
+    """
+
+    def execute(self):
+        self.fm.cd('~/Documents/dnd')
 
 class tr(Command):
     """
