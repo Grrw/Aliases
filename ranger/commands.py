@@ -64,11 +64,11 @@ class cded(Command):
     """
     :cded
     (cd ExtraDrive)
-    Jumps to the ExtraDrive1 drive in /media/ben/
+    Jumps to the ExtraDrive1 drive in /media/claud/
     """
 
     def execute(self):
-        self.fm.cd('/media/ben/ExtraDrive1')
+        self.fm.cd('/media/claud/ExtraDrive1')
 
 class cdsm(Command):
     """
